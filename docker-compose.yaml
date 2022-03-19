@@ -2,6 +2,6 @@ version: "3"
 
 services:
   web:
-    image: node:12
+    image: email-collector
     ports:
-      - "3000:3000"
+      - "9000:8000"

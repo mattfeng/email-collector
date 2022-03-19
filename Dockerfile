@@ -4,4 +4,4 @@ ADD main.py /
 ADD requirements.txt /
 RUN pip install -r requirements.txt
 
-CMD ["gunicorn", "\'main:create_app()\'"]
+CMD ["/usr/local/bin/gunicorn", "--bind", "0.0.0.0", "main:create_app()"]
