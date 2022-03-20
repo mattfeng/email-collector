@@ -29,7 +29,7 @@ def create_app():
         return "emails"
 
     @app.route("/add", methods=["POST"])
-    @cross_origin(origins=["http://localhost:8000", "https://mailinglist.mattfeng.tech"])
+    @cross_origin(origins=["http://localhost:8000", "https://aceresearch.github.io"])
     def add():
         addr = request.form.get("email")
         print(addr)
