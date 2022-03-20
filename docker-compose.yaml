@@ -3,5 +3,10 @@ version: "3"
 services:
   web:
     image: email-collector
+    environment:
+      - DB_HOST:${DB_HOST}
+      - DB_USER:${DB_USER}
+      - DB_PASS:${DB_PASS}
+      - EMAILS_PASSWORD:${EMAILS_PASSWORD}
     ports:
       - "9000:8000"
