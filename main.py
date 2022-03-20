@@ -1,6 +1,8 @@
+from audioop import cross
 from flask import Flask, jsonify, request, Response
 from flask_mongoengine import MongoEngine
 from dotenv import load_dotenv
+from flask_cors import cross_origin
 import json
 import os
 
@@ -27,8 +29,10 @@ def create_app():
         return "emails"
 
     @app.route("/add", methods=["POST"])
+    @cross_origin(origins=["http://localhost:8000", "https://mailinglist.mattfeng.tech"])
     def add():
         addr = request.form.get("email")
+        print(addr)
 
         msg = json.dumps({"message": "bad email", "error": True})
         status = 400
